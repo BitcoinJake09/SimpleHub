@@ -1,0 +1,23 @@
+spigot:
+  container_name: simplehub
+  build: .
+  volumes:
+    - "/SimpleHub/spigot/world:/spigot/world"
+    - "/SimpleHub/spigot/world_nether:/spigot/world_nether"
+    - "/SimpleHub/spigot/world_the_end:/spigot/world_the_end"
+    - "/SimpleHub/spigot/SimpleHub:/spigot/SimpleHub"
+    - "/SimpleHub/spigot/SimpleHub_nether:/spigot/SimpleHub_nether"
+    - "/SimpleHub/spigot/SimpleHub_the_end:/spigot/SimpleHub_the_end"
+  ports:
+    - "25566:25566"
+  env_file:
+    - variables.env
+  environment:
+    - SIMPLEHUB_ENV=development
+    - BUYIN_AMOUNT=1.00
+    - LIVES_PERBUYIN=1
+    - ADDRESS_URL=https://www.blockchain.com/btc/address/
+  links:
+    - redis
+redis:
+  image: redis
