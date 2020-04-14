@@ -1,0 +1,6 @@
+main: com.simplehub.simplehub.SimpleHub
+name: SimpleHub
+version: 1.0
+author: The SimpleHub Dev Team
+description: The SimpleHub Open Source Project
+api-version: 1.13
